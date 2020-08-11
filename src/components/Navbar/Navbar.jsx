@@ -3,10 +3,10 @@ import React from "react";
 function Navbar() {
   return (
     <nav
-      classNameName="navbar navbar-expand-lg navbar-dark"
-      styleName="background-color: darkred"
+      className="navbar navbar-expand-lg navbar-dark"
+      style={{background: "darkred"}}
     >
-      <a className="navbar-brand" href="index.html">
+      <a className="navbar-brand" href="../../Home">
         Parker Martin
       </a>
       <button
@@ -22,24 +22,24 @@ function Navbar() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup" />
       <div className="navbar-nav">
-        <a className="nav-item nav-link active" href="index.html">
+        <a className="nav-item nav-link" href="../../Home"> 
           About
         </a>
-        <a className="nav-item nav-link" href="portfolio.html">
+        <a className="nav-item nav-link" href="../../Portfolio">
           Portfolio
         </a>
-        <a className="nav-item nav-link" href="contact.html">
+        <a className="nav-item nav-link" href="../../Contact">
           Contact
         </a>
       </div>
       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a className="dropdown-item" href="index.html">
+        <a className="dropdown-item" href="../../Home">
           About
         </a>
-        <a className="dropdown-item" href="portfolio.html">
+        <a className="dropdown-item" href="../../Portfolio">
           Portfolio
         </a>
-        <a className="dropdown-item" href="contact.html">
+        <a className="dropdown-item" href="../../Contact">
           Contact
         </a>
       </div>

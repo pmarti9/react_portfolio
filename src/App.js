@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 // import logo from './logo.svg';
 import './App.css';
-import Index from "./components/Index/Index"
+import Home from "./components/Home/Home"
 import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/Footer/Footer"
 import Contact from "./components/Contact/Contact"
+import Portfolio from './components/Portfolio/Portfolio';
 
 function App() {
   return ( 
@@ -13,8 +14,14 @@ function App() {
     <div>
     <Navbar />
       <Switch>
-        <Route exact path={["/", "/index"]}>
-          <Index />
+        <Route exact path={["/", "/Home"]}>
+          <Home />
+        </Route>
+        <Route exact path={['/Contact']}>
+          <Contact />
+          </Route>
+        <Route exact path={['/Portfolio']}>
+          <Portfolio />
         </Route>
         </Switch>
     <Footer />
