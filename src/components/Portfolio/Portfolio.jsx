@@ -22,7 +22,7 @@ return(
             <div className="card">
               <div className="card-body">
                 <h4 className="card-title">Resume</h4>
-                <p className="card-text">To check out my qualifications and resume, <a href="ParkerResume.docx.pdf"
+                <p className="card-text">To check out my qualifications and resume, <a href=".././public/images/Parker Martin Resume July 2020_.pdf"
                     target="blank">Click Here</a> to view a PDF version</p>
               </div>
             </div>
