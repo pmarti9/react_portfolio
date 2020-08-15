@@ -1,4 +1,7 @@
 import React from "react"
+import proj1 from "./../../images/Project1Screenshot.png"
+import proj2 from "./../../images/QuaranSale.png"
+import resume from "./../../images/Parker_Martin_Resume_July_2020_.pdf"
 
 function Portfolio(){
 return(
@@ -22,7 +25,7 @@ return(
             <div className="card">
               <div className="card-body">
                 <h4 className="card-title">Resume</h4>
-                <p className="card-text">To check out my qualifications and resume, <a href=".././public/images/Parker Martin Resume July 2020_.pdf"
+                <p className="card-text">To check out my qualifications and resume, <a href= {resume}
                     target="blank">Click Here</a> to view a PDF version</p>
               </div>
             </div>
@@ -52,7 +55,7 @@ return(
                 <br />To view the repository, <a href="https://github.com/SWHorne/Project_G.O.A.T">Click Here</a>.
                 <br /><br />
                 Here is an image of the deployed application!
-                <img className="proj1img" src="./Project1Screenshot.png" alt="Project1Screenshot" />
+                <img className="proj1img" src={proj1} alt="Project1Screenshot" />
                 {/* </p> */}
 
               </div>
@@ -88,7 +91,7 @@ return(
                 <br />To view the repository, <a href="https://github.com/MartinMartinez83/Project2">Click Here</a>.
                 <br /><br />
                 Here is an image of the deployed application!
-                <imgr className="proj2img" src="../../../public/images/Quaansale.png" alt="Project2Screenshot" />
+                <imgr className="proj2img" src={proj2} />
                 </p>
 
               </div>
@@ -107,6 +110,9 @@ return(
                 <p className="card-text">This homework assignment was the first express app that used JawsDB database with
                   heroku that had UI. It is the week 13 homework repo. The link to view it is <a
                     href="https://glacial-beyond-66562.herokuapp.com/">here</a>.</p>
+                    <hr />
+                    <br />
+                    <br />
               </div>
             </div>
           </div>
