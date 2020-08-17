@@ -9,26 +9,23 @@ import Home from "./components/Home/Home"
 import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/Footer/Footer"
 import Contact from "./components/Contact/Contact"
-import Portfolio from './components/Portfolio/Portfolio';
+import Portfolio from './components/Portfolio/Portfolio'
+import NavTabs from "./components/pages/NavTabs"
 
 
 function App() {
   return ( 
     <Router>
-    <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
+    {/* <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter> */}
     <div>
-    <Navbar />
-      <Switch>
-        <Route exact path={["/", "/Home"]}>
-          <Home />
-        </Route>
-        <Route exact path={['/Contact']}>
-          <Contact />
-          </Route>
-        <Route exact path={['/Portfolio']}>
-          <Portfolio />
-        </Route>
-        </Switch>
+      <div>
+        <NavTabs />
+        {/* <Navbar /> */}
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Portfolio" component={Portfolio} />
+        <Route exact path="/Home" component={Home} />
+        <Route path="/Contact" component={Contact} />
+      </div>
     <Footer />
     </div>
     </Router>

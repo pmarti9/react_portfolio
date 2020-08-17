@@ -1,0 +1,8 @@
+ul.nav.nav-tabs{
+    background-color: darkred;
+    color:white;
+    display:block;
+}
+a.nav-link{
+    color: white
+}
