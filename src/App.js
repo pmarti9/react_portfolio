@@ -15,8 +15,7 @@ import NavTabs from "./components/pages/NavTabs"
 
 function App() {
   return ( 
-    <Router>
-    {/* <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter> */}
+    <Router basename={process.env.PUBLIC_URL}>
     <div>
       <div>
         <NavTabs />
