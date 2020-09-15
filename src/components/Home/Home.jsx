@@ -1,6 +1,7 @@
 import React from 'react'
 import Parker from './../../images/ParkerMartin.jpg'
 
+
 function Home() {
     return(
         <div className="container">
@@ -13,8 +14,8 @@ function Home() {
                   <p>My name is Parker Martin. I live in Saratoga Springs, Utah with my wife Lindsey and son Cooper. We love it here. I want to be a developer and am doing my best to adopt my skills necessary.</p>
                   <p>This is a showcase of where my skills can take me. Currently I have 2 project links and 4 homework assignments to showcase my abilities as a developer.
                   </p>
-                  <p>To View my portfolio, click on the portfolio link in the navigation or <a href="portfolio.html">click here</a>.</p>
-                  <p>To contact me about my portfolio, click on the contact link in the navigation or <a href="contact.html">click Here</a>. My name and email addres is also located in the footer for all pages, and clicking on that will allow you to send me a message.</p>
+                  <p>To View my portfolio, click on the portfolio link in the navigation.</p>
+                  <p>To contact me about my portfolio, click on the contact link in the navigation. My name and email addres is also located in the footer for all pages, and clicking on that will allow you to send me a message.</p>
 
             </div>
 
