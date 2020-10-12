@@ -53,6 +53,21 @@ return(
                 and not being used by the API. To view the website, <a
                   href="https://swhorne.github.io/Project_G.O.A.T/">Click Here</a>.
                 <br />
+                <br />
+                <h7>Technologies Used</h7>
+                <p>
+                  <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Bootstrap</li>
+                  <li>BallDontLie API</li>
+                  <li>FontAwesome</li>
+                  <li>Materialize</li>
+                  <li>JQuery</li>
+                  <li>Ajax</li>
+                  </ul>
+                  </p>
                 <br />To view the repository, <a href="https://github.com/SWHorne/Project_G.O.A.T">Click Here</a>.
                 <br /><br />
                 Here is an image of the deployed application!
@@ -89,6 +104,24 @@ return(
                 We alos used bcrypt.js and had not previously covered it. To view the website, <a
                   href="https://parkersproject.herokuapp.com/  ">Click Here</a>.
                 <br />
+                <br />
+                <h7>Technologies Used</h7>
+                <p>
+                  <ul>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>MySQL</li>
+                  <li>Sequelize</li>
+                  <li>Heroku</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Handlebars</li>
+                  <li>Bootstrap</li>
+                  <li>bcrypt.js</li>
+                  <li>passport.js</li>
+                  <li>...and more</li>
+                  </ul>
+                  </p>
                 <br />To view the repository, <a href="https://github.com/MartinMartinez83/Project2">Click Here</a>.
                 <br /><br />
                 Here is an image of the deployed application!
@@ -111,7 +144,7 @@ return(
                 <p className="card-text">This homework assignment was the first express app that used JawsDB database with
                   heroku that had UI. It is the week 13 homework repo. The link to view it is <a
                     href="https://glacial-beyond-66562.herokuapp.com/">here</a>.</p>
-                    <hr />
+                    
                     
                     <br />
                     
@@ -153,20 +186,18 @@ return(
             </div>
             <div className="card">
               <div className="card-body">
-                <h4 className="card-title">Password Generator</h4>
-                <p className="card-text">This homework assignment was one of the first using Javascript. Upon clicking the
-                  generate password button, it would give me a random passowrd of the length the user specified. This is
-                  on my github profile and is the week 3 homework.</p>
+                <h4 className="card-title">Workout Tracker</h4>
+                <p className="card-text">This app Is a full stack applcation for a workout tracker. To check out the Workout Tracker, click <a href="https://still-beach-28068.herokuapp.com/?id=5f20ca96ffa0700017169912">here</a>.</p>
               </div>
             </div>
             <div className="card">
               <div className="card-body">
-                <h4 className="card-title">First Portfolio Deploy</h4>
-                <p className="card-text">This was the first deploy of the porftolio. I had used bootstrap and had a
-                  different color scheme. This is the week 2 homework in my github profile.</p>
+                <h4 className="card-title">Budget Tracker</h4>
+                <p className="card-text">The budget tracker app allowed a user to enter a transaction amount and number. Here is a link to the <a href="https://voyage-moliere-05252.herokuapp.com/">Budget Tracker</a></p>
               </div>
             </div>
           </div>
+          <hr />
         </div>
       </div>
     </div>
