@@ -1,7 +1,8 @@
 import React from "react"
 import proj1 from "./../../images/Project1Screenshot.png"
 import proj2 from "./../../images/QuaranSale.png"
-import resume from "./../../images/Parker_Martin_Resume_July_2020_.pdf"
+import resume from "./../../images/Parker Martin Resume_2020.pdf"
+import proj3 from "./../../images/FeastFinder.png"
 
 function Portfolio(){
 return(
@@ -91,7 +92,7 @@ return(
                 <br />To view the repository, <a href="https://github.com/MartinMartinez83/Project2">Click Here</a>.
                 <br /><br />
                 Here is an image of the deployed application!
-                <imgr className="proj2img" src={proj2} />
+                <img className="proj2img" src={proj2} alt="QuaranSaleImage"/>
                 </p>
 
               </div>
@@ -111,8 +112,58 @@ return(
                   heroku that had UI. It is the week 13 homework repo. The link to view it is <a
                     href="https://glacial-beyond-66562.herokuapp.com/">here</a>.</p>
                     <hr />
+                    
                     <br />
+                    
                     <br />
+              </div>
+              
+            </div>
+          </div>   <hr />
+          <div className="card-group">
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title">Project 3</h4>
+                <p className="card-text" />
+                <h6>Project Name: Feast Finder</h6>
+                This is my final project. A user can log in, search ingredients and post recipes to his account. To view the website, <a
+                  href="https://feastfinder.herokuapp.com/">Click Here</a>.
+                <br />
+                <br />
+                <h7>Technologies Used</h7>
+                <p><ul>
+                  <li>React.js</li>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>MongoDB</li>
+                  <li>Tesseract.js</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>ReactBootstrap</li>
+                  <li>Bootstrap</li>
+                  <li>...and more</li>
+                  </ul>
+                  </p>
+               To view the repository, <a href="https://github.com/pmarti9/feastfinder">Click Here</a>.
+                <br /><br />
+                Here is an image of the deployed application!
+                <img className="proj1img" src={proj3} alt="FeastFinderScreenshot" />
+
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title">Password Generator</h4>
+                <p className="card-text">This homework assignment was one of the first using Javascript. Upon clicking the
+                  generate password button, it would give me a random passowrd of the length the user specified. This is
+                  on my github profile and is the week 3 homework.</p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-body">
+                <h4 className="card-title">First Portfolio Deploy</h4>
+                <p className="card-text">This was the first deploy of the porftolio. I had used bootstrap and had a
+                  different color scheme. This is the week 2 homework in my github profile.</p>
               </div>
             </div>
           </div>
