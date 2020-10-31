@@ -18,8 +18,8 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
     <div>
       <div>
-        {/* <NavTabs /> */}
-        <Navbar />
+        <NavTabs />
+        {/* <Navbar /> */}
         <Route exact path="/" component={Home} />
         <Route exact path="/Portfolio" component={Portfolio} />
         <Route exact path="/Home" component={Home} />
