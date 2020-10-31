@@ -5,6 +5,10 @@ img {
  body {
      background-color: black;
  }
+ .jumbotron {
+    color: whitesmoke;
+    background-color: black;
+ }
  footer {
      position: fixed;
      background-color: darkred;
