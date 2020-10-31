@@ -6,7 +6,7 @@ function Navbar() {
       className="navbar navbar-expand-lg navbar-dark"
       style={{background: "darkred"}}
     >
-      <a className="navbar-brand" href="../../Home">
+      <a className="navbar-brand" href="../../react_portfolio/Home">
         Parker Martin
       </a>
       <button
@@ -22,24 +22,24 @@ function Navbar() {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup" />
       <div className="navbar-nav">
-        <a className="nav-item nav-link" href="../../Home"> 
+        <a className="nav-item nav-link" href="../../react_portfolio/Home"> 
           About
         </a>
-        <a className="nav-item nav-link" href="../../Portfolio">
+        <a className="nav-item nav-link" href="../../react_portfolio/Portfolio">
           Portfolio
         </a>
-        <a className="nav-item nav-link" href="../../Contact">
+        <a className="nav-item nav-link" href="../../react_portfolio/Contact">
           Contact
         </a>
       </div>
       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a className="dropdown-item" href="../../Home">
+        <a className="dropdown-item" href="../../react_portfolio/Home">
           About
         </a>
-        <a className="dropdown-item" href="../../Portfolio">
+        <a className="dropdown-item" href="../../react_portfolio/Portfolio">
           Portfolio
         </a>
-        <a className="dropdown-item" href="../../Contact">
+        <a className="dropdown-item" href="../../react_portfolio/Contact">
           Contact
         </a>
       </div>
