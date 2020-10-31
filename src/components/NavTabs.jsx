@@ -9,8 +9,8 @@ function NavTabs() {
     const location = useLocation();
   
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand"><Link to="/Home" className={location.pathname === "/Home"}>Parker Martin</Link></a>
+      <nav className="navbar navbar-expand-lg">
+        {/* <a className="navbar-brand parker"><Link to="/Home" className={location.pathname === "/Home"}>Parker Martin</Link></a> */}
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <Link 
