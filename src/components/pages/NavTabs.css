@@ -1,8 +1,33 @@
+.bg-light {
+    background-color: darkred;
+}
+a:link{
+    color: white;
+    text-decoration: none;
+}
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+a:active{
+    color: white;
+    text-decoration: none;
+}
+a.navbar-brand{
+    background-color: darkred;
+    color: white;
+}
 ul.nav.nav-tabs{
     background-color: darkred;
     color:white;
-    display:block;
+    
+    /* display: block; */
 }
 a.nav-link{
-    color: white
+    color: white;
+    align-content: stretch;
 }

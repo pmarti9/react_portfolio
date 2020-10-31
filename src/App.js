@@ -5,12 +5,12 @@ import { BrowserRouter as Router, Route, Switch, BrowserRouter} from "react-rout
 
 // \\
 import './App.css';
-import Home from "./components/Home/Home"
+import Home from "./components/pages/Home"
 import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/Footer/Footer"
-import Contact from "./components/Contact/Contact"
-import Portfolio from './components/Portfolio/Portfolio'
-import NavTabs from "./components/pages/NavTabs"
+import Contact from "./components/pages/Contact"
+import Portfolio from './components/pages/Portfolio'
+import NavTabs from "./components/NavTabs"
 
 
 function App() {
