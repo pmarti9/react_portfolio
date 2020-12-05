@@ -15,7 +15,7 @@ return(
           <h1>Portfolio</h1>
           <hr />
           <div className="card-group">
-            <div className="card">
+            <div className="card">  
               <div className="card-body">
                 <h4 className="card-title">Github</h4>
                 <p className="card-text">To check out my projects and repositories, <a
@@ -56,6 +56,7 @@ return(
                 <br />
                 <h7>Technologies Used</h7>
                 <p>
+                 
                   <ul>
                   <li>HTML</li>
                   <li>CSS</li>
@@ -67,6 +68,7 @@ return(
                   <li>JQuery</li>
                   <li>Ajax</li>
                   </ul>
+                  
                   </p>
                 <br />To view the repository, <a href="https://github.com/SWHorne/Project_G.O.A.T">Click Here</a>.
                 <br /><br />

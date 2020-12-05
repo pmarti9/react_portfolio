@@ -1,0 +1,10 @@
+.jumbotron {
+    background-color: black;
+}
+.card-body{
+    background-color: black;
+}
+body {
+    color: whitesmoke;
+    /* text-align: center; */
+}

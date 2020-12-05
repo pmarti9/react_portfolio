@@ -1,8 +1,10 @@
 .navbar {
-    background-color: darkred;
+    background-color: black;
+    position: top fixed;
+    color: whitesmoke;
 }
 .bg-light {
-    background-color: darkred;
+    background-color: black;
 }
 /* a:link{
     color: white;
@@ -20,17 +22,19 @@ a   :active{
     color: white;
     text-decoration: none;
 } */
+
 a.navbar-brand{
-    background-color: darkred;
+    background-color: black;
     color: white; 
 }
 ul.nav.nav-tabs{
-    background-color: darkred;
+    background-color:black;
     color:white;
     text-align: right;
     /* display: block; */
 }
 a.nav-link{
+    text-decoration: none;
     color: white;
     /* align-content: stretch; */
 }

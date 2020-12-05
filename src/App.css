@@ -6,8 +6,11 @@ img {
 body {
    background-color: black;
 }
-footer {
+header {
    position: fixed;
+}
+footer {
+   /* position: fixed; */
    background-color: darkred;
    text-align: center;
        left: 0;
@@ -16,6 +19,7 @@ footer {
        color: white;
        text-align: center;
 }
+
 .proj1img {
    width: 75%;
 }

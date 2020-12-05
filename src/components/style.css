@@ -1,3 +1,18 @@
+.navbar.navbar-expand-lg{
+    position: top;
+}
+.navbar{
+    position: top fixed
+}
+h1{
+    text-align: center;
+}
+/* hr {
+    color: darkred;
+} */
+li {
+    text-align: left;
+}
 img {
     max-width: 350px;
     max-height: 350px;
