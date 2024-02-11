@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark"
-      style={{background: "darkred"}}
+      // style={{background: "blue"}}
     >
       <a className="navbar-brand" href="../../react_portfolio/Home">
         Parker Martin
