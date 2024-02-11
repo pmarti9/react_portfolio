@@ -11,8 +11,7 @@ return(
     <div className="row">
       <div className="col-xl-12">
         <div className="jumbotron">
-          <hr />
-          <h1>Portfolio</h1>
+          <h3>My Work</h3>
           <hr />
           <div className="card-group">
             <div className="card">  
@@ -46,7 +45,7 @@ return(
             <div className="card">
               <div className="card-body">
                 <h4 className="card-title">Project 1</h4>
-                <p className="card-text" />
+                <p className="card-text">
                 <h6>Project Name: NBA STATS</h6>
                 This is my first project. It was an NBA stats website. We used two different API's to call data. For the
                 MVP, it pulls in team information and shows all time stats! Those all time stats are currently static
@@ -74,7 +73,7 @@ return(
                 <br /><br />
                 Here is an image of the deployed application!
                 <img className="proj1img" src={proj1} alt="Project1Screenshot" />
-                {/* </p> */}
+                 </p>
 
               </div>
             </div>
@@ -159,7 +158,7 @@ return(
             <div className="card">
               <div className="card-body">
                 <h4 className="card-title">Project 3</h4>
-                <p className="card-text" />
+                <p className="card-text">
                 <h6>Project Name: Feast Finder</h6>
                 This is my final project. A user can log in, search ingredients and post recipes to his account. To view the website, <a
                   href="https://feastfinder.herokuapp.com/">Click Here</a>.
@@ -183,7 +182,7 @@ return(
                 <br /><br />
                 Here is an image of the deployed application!
                 <img className="proj1img" src={proj3} alt="FeastFinderScreenshot" />
-
+                </p>
               </div>
             </div>
             <div className="card">

@@ -8,7 +8,7 @@ import Home from "./components/pages/Home";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/pages/Contact";
 import Portfolio from "./components/pages/Portfolio";
-import NavTabs from "./components/NavTabs";
+import NavTabs from "./components/navigation/NavTabs";
 
 function App() {
   return (

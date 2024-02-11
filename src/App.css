@@ -27,23 +27,29 @@ footer {
 .proj2img {
    width: 75%;
 }
-/* @media screen and (max-width: 768px){
+@media screen and (max-width: 768px){
 body {
    background-color: darkred;
    color: black;
-}; */
-/* .jumbotron{
-   background-color: black;
-};
+}
+ .jumbotron{
+     color: whitesmoke;
+     background-color: black;
+ }
+}
 .card-group{
-   background-color: black;
+    color: whitesmoke;
+    background-color: black;
 }
 .card-title{
-   background-color: black;
+    color: whitesmoke;
+    background-color: black;
 }
 .cardbody {
-   background-color: black;
+    color: whitesmoke;
+    background-color: black;
 }
 .card-text{
+    color: whitesmoke;
    background-color: black;
-}*/
+}

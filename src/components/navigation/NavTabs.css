@@ -1,12 +1,14 @@
 .navbar {
-    background-color: black;
-    position: top fixed;
+    display: flex;
+    align-content: center;
+    background-color: darkred;
+    justify-content: space-around;
+    top: 0;
+    position: relative;
     color: whitesmoke;
 }
-.bg-light {
-    background-color: black;
-}
-/* a:link{
+
+ a:link{
     color: white;
     text-decoration: none;
 }
@@ -21,10 +23,10 @@ a:hover{
 a   :active{
     color: white;
     text-decoration: none;
-} */
+}
 
 a.navbar-brand{
-    background-color: black;
+    background-color: red;
     color: white; 
 }
 ul.nav.nav-tabs{
