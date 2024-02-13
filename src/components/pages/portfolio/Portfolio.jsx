@@ -6,15 +6,15 @@ function Portfolio() {
     const workInfo = [
         {
             name: "GitHub",
-          description: <a href="https://github.com/pmarti9">Click Here to visit</a>
+            description: <a href="https://github.com/pmarti9\">Click here to visit my GitHub</a>
         },
         {
             name: "GitLab",
-          description: <a href="https://gitlab.com/pmarti9">Click Here to visit</a>
+            description: <a href="https://gitlab.com/pmarti9">Click Here to visit my GitLab</a>
         },
         {
             name: "LinkedIn",
-          description: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">Click Here to visit</a>
+            description: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">Click Here to go to my LinkedIn profile</a>
         },
 
         {
@@ -34,7 +34,6 @@ function Portfolio() {
                                 <div className="col-xl-12">
                                     <div className="jumbotron">
 
-                                        <hr/>
                                         <div className="card-group">
 
                                             <div className="card">
