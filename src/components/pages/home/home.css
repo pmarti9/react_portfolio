@@ -1,0 +1,12 @@
+img {
+    max-width: 350px;
+    max-height: 350px;
+    display: flex;
+    align-content: space-around;
+}
+
+.display2 {
+    display: grid;
+    align-content: center;
+    margin: 1rem 1rem;
+}

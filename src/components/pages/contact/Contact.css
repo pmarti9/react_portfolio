@@ -8,3 +8,9 @@ body {
     color: whitesmoke;
     /* text-align: center; */
 }
+
+.container {
+    margin: 1rem 1rem;
+    text-align: left;
+    align-content: space-around;
+}

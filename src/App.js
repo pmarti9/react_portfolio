@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // \\
 import "./App.css";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/home/Home";
 import Footer from "./components/Footer/Footer";
-import Contact from "./components/pages/Contact";
-import Portfolio from "./components/pages/Portfolio";
+import Contact from "./components/pages/contact/Contact";
+import Portfolio from "./components/pages/portfolio/Portfolio";
 import NavTabs from "./components/navigation/NavTabs";
 
 function App() {

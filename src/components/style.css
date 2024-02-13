@@ -24,16 +24,7 @@ img {
     color: whitesmoke;
     background-color: black;
  }
- footer {
-     position: fixed;
-     background-color: darkred;
-     text-align: center;
-         left: 0;
-         bottom: 0;
-         width: 100%;
-         color: white;
-         text-align: center;
- }
+
  .proj1img {
      width: 75%;
  }
