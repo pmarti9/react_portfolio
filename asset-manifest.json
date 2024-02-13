@@ -1,18 +1,15 @@
 {
   "files": {
-    "main.css": "/react_portfolio/static/css/main.b553986b.css",
-    "main.js": "/react_portfolio/static/js/main.fdef0c62.js",
-    "static/media/FeastFinder.png": "/react_portfolio/static/media/FeastFinder.38d0754c824707d51b60.png",
-    "static/media/QuaranSale.png": "/react_portfolio/static/media/QuaranSale.3bc73a9187b206754e7b.png",
-    "static/media/Project1Screenshot.png": "/react_portfolio/static/media/Project1Screenshot.b45d6612574ed3d61ce6.png",
+    "main.css": "/react_portfolio/static/css/main.366112fd.css",
+    "main.js": "/react_portfolio/static/js/main.fc2fc065.js",
     "static/media/Parker Martin Resume_2020.pdf": "/react_portfolio/static/media/Parker Martin Resume_2020.5eb8046f2b5ca135faa0.pdf",
     "static/media/ParkerMartin.jpg": "/react_portfolio/static/media/ParkerMartin.0710fde18e734957bc29.jpg",
     "index.html": "/react_portfolio/index.html",
-    "main.b553986b.css.map": "/react_portfolio/static/css/main.b553986b.css.map",
-    "main.fdef0c62.js.map": "/react_portfolio/static/js/main.fdef0c62.js.map"
+    "main.366112fd.css.map": "/react_portfolio/static/css/main.366112fd.css.map",
+    "main.fc2fc065.js.map": "/react_portfolio/static/js/main.fc2fc065.js.map"
   },
   "entrypoints": [
-    "static/css/main.b553986b.css",
-    "static/js/main.fdef0c62.js"
+    "static/css/main.366112fd.css",
+    "static/js/main.fc2fc065.js"
   ]
 }
