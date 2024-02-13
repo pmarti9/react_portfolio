@@ -6,18 +6,20 @@ function Portfolio() {
     const workInfo = [
         {
             name: "GitHub",
-            description: "This is my github profile"
+          description: <a href="https://github.com/pmarti9">Click Here to visit</a>
         },
         {
             name: "GitLab",
-            description: "This is my gitlab profile"
+          description: <a href="https://gitlab.com/pmarti9">Click Here to visit</a>
         },
         {
             name: "LinkedIn",
-            description: "my linkedin profile"},
+          description: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">Click Here to visit</a>
+        },
+
         {
             name: "Resume",
-            description: "my resume"
+            description: <a href={resume}> View my Resume</a>
         }
     ];
 
