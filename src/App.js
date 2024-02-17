@@ -10,7 +10,9 @@ import Contact from "./components/pages/contact/Contact";
 import Portfolio from "./components/pages/portfolio/Portfolio";
 import NavTabs from "./components/navigation/NavTabs";
 
+
 function App() {
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <div>

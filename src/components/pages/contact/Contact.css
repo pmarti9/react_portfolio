@@ -1,16 +1,17 @@
 .jumbotron {
-    background-color: black;
+    /*background-color: black;*/
 }
+
 .card-body{
     background-color: black;
+    color: whitesmoke;
 }
 body {
     color: whitesmoke;
-    /* text-align: center; */
+     /*text-align: center;*/
 }
 
 .container {
-    margin: 1rem 1rem;
     text-align: left;
     align-content: space-around;
 }

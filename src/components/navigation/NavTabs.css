@@ -1,7 +1,7 @@
 .navbar {
     display: flex;
     align-content: center;
-    background-color: darkred;
+
     justify-content: space-around;
     top: 0;
     position: relative;
@@ -26,11 +26,11 @@ a   :active{
 }
 
 a.navbar-brand{
-    background-color: red;
+    /*background-color: red;*/
     color: white; 
 }
 ul.nav.nav-tabs{
-    background-color:black;
+    /*background-color:black;*/
     color:white;
     text-align: right;
     /* display: block; */

@@ -1,5 +1,6 @@
 import React from "react"
-import resume from "../../../images/Parker Martin Resume_2020.pdf"
+import resume from "../../../images/Parker Martin Resume 2023.pdf"
+import "./portfolio.css"
 
 function Portfolio() {
 
@@ -52,7 +53,6 @@ function Portfolio() {
                                 </div>
                             </div>
                         </div>
-
                     </>
                 )
             })}
