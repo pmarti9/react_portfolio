@@ -13,7 +13,7 @@ function NavTabs() {
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <Link
-            to="/Home"
+            to="/home"
             className={
               location.pathname === "/Home" ? "nav-link active" : "nav-link"
             }
@@ -23,7 +23,7 @@ function NavTabs() {
         </li>
         <li className="nav-item">
           <Link
-            to="/Portfolio"
+            to="/portfolio"
             className={
               location.pathname === "/Portfolio"
                 ? "nav-link active"
@@ -35,7 +35,7 @@ function NavTabs() {
         </li>
         <li className="nav-item">
           <Link
-            to="/Contact"
+            to="/contact"
             className={
               location.pathname === "/Contact" ? "nav-link active" : "nav-link"
             }
