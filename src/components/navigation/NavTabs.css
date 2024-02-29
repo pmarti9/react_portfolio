@@ -7,8 +7,7 @@
     position: relative;
     color: whitesmoke;
 }
-
- a:link{
+a:link{
     color: white;
     text-decoration: none;
 }
@@ -20,7 +19,7 @@ a:hover{
     color: white;
     text-decoration: none;
 }
-a   :active{
+a:active{
     color: white;
     text-decoration: none;
 }
@@ -37,6 +36,5 @@ ul.nav.nav-tabs{
 }
 a.nav-link{
     text-decoration: none;
-    color: white;
-    /* align-content: stretch; */
+    --bs-nav-link-hover-color: red;
 }
