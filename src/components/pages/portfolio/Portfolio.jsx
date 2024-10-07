@@ -2,28 +2,26 @@ import React from "react"
 import resume from "../../../images/Parker Martin Resume 2023.pdf"
 import "./portfolio.css"
 
+
 function Portfolio() {
 
     const workInfo = [
         {
-            name: "GitHub",
-            description: <a href="https://github.com/pmarti9\">Click here to visit my GitHub</a>
+            content: <a href="https://github.com/pmarti9\">GitHub<i className="fab fa-github fa-md"></i></a>,
         },
         {
-            name: "LinkedIn",
-            description: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">Click Here to go to my LinkedIn profile</a>
+            content: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">LinkedIn<i className="fab fa-linkedin fa-md"></i></a>,
         },
 
         {
-            name: "Resume",
-            description: <a href={resume}> View my Resume</a>
+            content: <a href={resume}>Resume<i className="fas fa-laptop-code"></i></a>,
         }
     ];
 
     return (
         <div>
 
-            {workInfo.map(function (data) {
+        {workInfo.map(function (data) {
 
                 return (<>
                         <div className="container">
@@ -35,11 +33,8 @@ function Portfolio() {
 
                                             <div className="card">
                                                 <div className="card-body">
-                                                    <h4 className="card-title"> {data.name}
-
+                                                    <h4 className="card-title"> {data.content}
                                                     </h4>
-                                                    <p className="card-text">{data.description}.</p>
-
                                                 </div>
                                             </div>
 

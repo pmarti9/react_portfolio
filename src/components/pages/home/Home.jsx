@@ -19,11 +19,11 @@ function Home() {
               </p>
               <p></p>
               <p>To View my portfolio, click on the portfolio link
-                in the navigation. Feel free to follow me on GitHub, GitLab and LinkedIn by clicking on the icons at the bottom of the page.
+                in the navigation. Feel free to follow me on GitHub and LinkedIn by clicking on the icons at the bottom of the page.
               </p>
               <p>
                 To contact me, click on the contact link in the navigation. You
-                can also request me on LinkedIn or follow me on GitHub and GitLab by
+                can also request me on LinkedIn or follow me on GitHub by
                 clicking on the icons at the bottom of the page.
               </p>
             </div>

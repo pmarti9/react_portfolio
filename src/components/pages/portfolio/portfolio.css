@@ -6,12 +6,18 @@
     background: transparent;
     border: 5rem black;
     border-radius: 10px;
+    /*align-content: center;*/
 }
 .card-body {
+    text-align: center;
+    align-content: center;
     background: transparent;
     border: 5rem black wave;
 }
 
 .jumbotron {
     background: black;
+}
+.card-group {
+    /*display: grid;*/
 }
