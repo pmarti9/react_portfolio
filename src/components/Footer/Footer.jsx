@@ -20,7 +20,6 @@ function Footer() {
 
         <div id="socialMedia">
          <a href="https://www.github.com/pmarti9"><i className="fab fa-github fa-md"></i></a>
-         <a href="https://www.gitlab.com/pmarti9"><i className="fab fa-gitlab fa-md"></i></a>
          <a href="https://www.linkedin.com/in/parker-martin-a5361147/"><i className="fab fa-linkedin fa-md"></i></a>
          </div>
 
