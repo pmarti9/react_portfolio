@@ -1,9 +1,12 @@
 import React from 'react'
 import "../Footer/Footer.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 function Footer() {
 
-    function displayDate() {
+
+    const displayDate = () => {
         const date = new Date()
         const year = date.getFullYear()
         const day = date.getDate()
@@ -19,8 +22,8 @@ function Footer() {
         </p>
 
         <div id="socialMedia">
-         <a href="https://www.github.com/pmarti9"><i className="fab fa-github fa-md"></i></a>
-         <a href="https://www.linkedin.com/in/parker-martin-a5361147/"><i className="fab fa-linkedin fa-md"></i></a>
+         <a href="https://www.github.com/pmarti9"><FontAwesomeIcon icon={faGithub} /></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+         <a href="https://www.linkedin.com/in/parker-martin-a5361147/"><FontAwesomeIcon icon={faLinkedin }/></a>
          </div>
 
       </footer>

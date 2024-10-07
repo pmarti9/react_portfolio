@@ -1,27 +1,30 @@
 import React from "react"
 import resume from "../../../images/Parker Martin Resume 2023.pdf"
 import "./portfolio.css"
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faLaptopCode} from "@fortawesome/free-solid-svg-icons";
 
 
 function Portfolio() {
 
-    const workInfo = [
+    const portfolioContents = [
         {
-            content: <a href="https://github.com/pmarti9\">GitHub<i className="fab fa-github fa-md"></i></a>,
+            content: <a href="https://github.com/pmarti9\">Github <FontAwesomeIcon icon={faGithub}/> </a>,
         },
         {
-            content: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">LinkedIn<i className="fab fa-linkedin fa-md"></i></a>,
+            content: <a href="https://www.linkedin.com/in/parker-martin-a5361147/">LinkedIn <FontAwesomeIcon icon={faLinkedin }/></a>,
         },
 
         {
-            content: <a href={resume}>Resume<i className="fas fa-laptop-code"></i></a>,
+            content: <a href={resume}>Resume <FontAwesomeIcon icon={faLaptopCode} /></a>,
         }
     ];
 
     return (
         <div>
 
-        {workInfo.map(function (data) {
+        {portfolioContents.map(function (data) {
 
                 return (<>
                         <div className="container">
@@ -51,6 +54,6 @@ function Portfolio() {
 
         </div>
     )
-};
+}
 
 export default Portfolio;
