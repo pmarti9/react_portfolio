@@ -6,12 +6,20 @@ on:
     branches:
       - master
 jobs:
-  Build-Deploy-site:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: | 
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
-      - run: npm run deploy
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up node20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # or any version you need
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build # Or wherever your built files are located
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
