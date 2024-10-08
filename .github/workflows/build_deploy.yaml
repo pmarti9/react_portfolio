@@ -6,20 +6,27 @@ on:
     branches:
       - master
 jobs:
-  deploy:
+
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout repository
+
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up node20
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # or any version you need
+          node-version: '20'  # Specify the Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build React app
+        run: npm run build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build # Or wherever your built files are located
-    env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

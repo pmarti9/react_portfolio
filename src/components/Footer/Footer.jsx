@@ -20,6 +20,7 @@ function Footer() {
         <p>
          Send me an email: <a href="mailto:parkerjmartin883@gmail.com">parkerjmartin883@gmail.com</a>
         </p>
+        <p>Deployed via github actions</p>
 
         <div id="socialMedia">
          <a href="https://www.github.com/pmarti9"><FontAwesomeIcon icon={faGithub} /></a>&nbsp;&nbsp;|&nbsp;&nbsp;
