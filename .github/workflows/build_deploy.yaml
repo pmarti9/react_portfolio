@@ -1,10 +1,13 @@
 name: Build_and_deploy app
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       - master
+#  pull_request:
+#    types:
+#      - closed
+#    branches:
+#      - master
 jobs:
 
   build:
