@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react_portfolio/static/css/main.cc4053d4.css",
+    "main.js": "/react_portfolio/static/js/main.109e171d.js",
+    "static/media/ParkerMartin.jpg": "/react_portfolio/static/media/ParkerMartin.0710fde18e734957bc29.jpg",
+    "static/media/Parker Martin Resume 2023.pdf": "/react_portfolio/static/media/Parker Martin Resume 2023.551d9358020ac24e2241.pdf",
+    "index.html": "/react_portfolio/index.html",
+    "main.cc4053d4.css.map": "/react_portfolio/static/css/main.cc4053d4.css.map",
+    "main.109e171d.js.map": "/react_portfolio/static/js/main.109e171d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc4053d4.css",
+    "static/js/main.109e171d.js"
+  ]
+}
