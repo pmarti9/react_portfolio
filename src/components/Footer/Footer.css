@@ -3,19 +3,19 @@ i {
     display: inline;
     padding: 20px;
 }
-#socialMedia {
+.socialMedia {
 
-    margin: 2rem;
-    
-    /* color: blue */
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+
 }
 footer {
-    /*background-color: black;*/
-    /**/
+    display: flex;
+    flex-direction: column;
     text-align: center;
     left: 0;
     bottom: 0;
     width: 100%;
     color: white;
-    : center;
 }
