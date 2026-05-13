@@ -18,22 +18,8 @@ function TechBackground() {
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
       : false;
 
-    // Adjust particle count based on viewport size for performance
-    const isMobile = window.innerWidth < 768;
-    const particleCount = isMobile ? 75 : 150;
-
-    // Scene setup
-    const scene = new THREE.Scene();
-    sceneRef.current = scene;
-
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    camera.position.z = 5;
-
+    // Create renderer first — bail out before allocating other Three.js resources
+    // if WebGL is unavailable, to avoid leaking a Scene reference.
     let renderer;
     try {
       renderer = new THREE.WebGLRenderer({
@@ -49,44 +35,75 @@ function TechBackground() {
     } catch (error) {
       // WebGL not available (test environment or unsupported browser)
       console.warn('WebGL not available for TechBackground');
-      return;
+      return () => {}; // Return a no-op cleanup; no Three.js resources were allocated
     }
 
-    // Create particles
-    const particles = [];
-    const particleGeometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(particleCount * 3);
-    const velocities = [];
+    // Scene setup
+    const scene = new THREE.Scene();
+    sceneRef.current = scene;
 
-    for (let i = 0; i < particleCount; i++) {
-      const x = (Math.random() - 0.5) * 20;
-      const y = (Math.random() - 0.5) * 20;
-      const z = (Math.random() - 0.5) * 10;
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    camera.position.z = 5;
 
-      positions[i * 3] = x;
-      positions[i * 3 + 1] = y;
-      positions[i * 3 + 2] = z;
+    // Mutable particle state — rebuilt whenever the mobile/desktop threshold is crossed on resize
+    let particles = [];
+    let velocities = [];
+    let particleGeometry = null;
+    let particleMaterial = null;
+    let particleSystem = null;
 
-      particles.push(new THREE.Vector3(x, y, z));
-      velocities.push({
-        x: (Math.random() - 0.5) * 0.01,
-        y: (Math.random() - 0.5) * 0.01,
-        z: (Math.random() - 0.5) * 0.005
+    const buildParticles = (count) => {
+      // Dispose and remove previous particle system if it exists
+      if (particleSystem) {
+        scene.remove(particleSystem);
+        particleGeometry.dispose();
+        particleMaterial.dispose();
+      }
+
+      particleGeometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(count * 3);
+      particles = [];
+      velocities = [];
+
+      for (let i = 0; i < count; i++) {
+        const x = (Math.random() - 0.5) * 20;
+        const y = (Math.random() - 0.5) * 20;
+        const z = (Math.random() - 0.5) * 10;
+
+        positions[i * 3] = x;
+        positions[i * 3 + 1] = y;
+        positions[i * 3 + 2] = z;
+
+        particles.push(new THREE.Vector3(x, y, z));
+        velocities.push({
+          x: (Math.random() - 0.5) * 0.01,
+          y: (Math.random() - 0.5) * 0.01,
+          z: (Math.random() - 0.5) * 0.005
+        });
+      }
+
+      particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+      particleMaterial = new THREE.PointsMaterial({
+        color: 0x00ffff,
+        size: 0.1,
+        transparent: true,
+        opacity: 0.8,
+        blending: THREE.AdditiveBlending
       });
-    }
 
-    particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      particleSystem = new THREE.Points(particleGeometry, particleMaterial);
+      scene.add(particleSystem);
+    };
 
-    const particleMaterial = new THREE.PointsMaterial({
-      color: 0x00ffff,
-      size: 0.1,
-      transparent: true,
-      opacity: 0.8,
-      blending: THREE.AdditiveBlending
-    });
-
-    const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-    scene.add(particleSystem);
+    // Build initial particle system; count is based on current viewport width
+    let isMobile = window.innerWidth < 768;
+    buildParticles(isMobile ? 75 : 150);
 
     // Create connecting lines (optimized using LineSegments)
     const lineMaterial = new THREE.LineBasicMaterial({
@@ -125,9 +142,10 @@ function TechBackground() {
         return;
       }
 
-      // Update particle positions
+      // Update particle positions (reads current particles/velocities after any rebuild)
+      const count = particles.length;
       const positions = particleGeometry.attributes.position.array;
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < count; i++) {
         positions[i * 3] += velocities[i].x;
         positions[i * 3 + 1] += velocities[i].y;
         positions[i * 3 + 2] += velocities[i].z;
@@ -150,8 +168,8 @@ function TechBackground() {
       const maxDistance = 2.5;
       const linePosArray = lineGeometry.attributes.position.array;
 
-      for (let i = 0; i < particleCount; i++) {
-        for (let j = i + 1; j < particleCount; j++) {
+      for (let i = 0; i < count; i++) {
+        for (let j = i + 1; j < count; j++) {
           if (lineIdx >= maxConnections) break;
 
           const distance = particles[i].distanceTo(particles[j]);
@@ -179,11 +197,17 @@ function TechBackground() {
 
     animate();
 
-    // Handle window resize
+    // Handle window resize — also regenerates particles if mobile/desktop threshold is crossed
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+
+      const newIsMobile = window.innerWidth < 768;
+      if (newIsMobile !== isMobile) {
+        isMobile = newIsMobile;
+        buildParticles(isMobile ? 75 : 150);
+      }
     };
 
     // Handle visibility change to pause animation when tab is hidden
@@ -205,13 +229,13 @@ function TechBackground() {
         cancelAnimationFrame(animationIdRef.current);
       }
       // Guard removeChild to prevent NotFoundError in React Strict Mode
-      if (currentMount && renderer.domElement && renderer.domElement.parentNode === currentMount) {
+      if (renderer.domElement.parentNode === currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
-      particleGeometry.dispose();
+      if (particleGeometry) particleGeometry.dispose();
+      if (particleMaterial) particleMaterial.dispose();
       lineGeometry.dispose();
-      particleMaterial.dispose();
       lineMaterial.dispose();
     };
   }, []);
