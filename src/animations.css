@@ -1,0 +1,204 @@
+/* Keyframe Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3),
+                0 0 10px rgba(0, 255, 255, 0.2),
+                0 0 15px rgba(0, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5),
+                0 0 20px rgba(0, 255, 255, 0.3),
+                0 0 30px rgba(0, 255, 255, 0.2);
+  }
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5),
+                 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.5),
+                 0 0 30px rgba(0, 102, 255, 0.3);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Utility Animation Classes */
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out both;
+}
+
+.animate-slideDown {
+  animation: slideDown 0.6s ease-out both;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out both;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Staggered Animation Delays */
+
+.delay-1 {
+  animation-delay: 0.1s;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Page Transition Classes */
+
+.page-container {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-enter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  z-index: 1;
+  will-change: opacity, transform;
+}
+
+.page-enter-active {
+  position: absolute;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  z-index: 1;
+}
+
+.page-enter-done {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Height is auto to allow content to flow naturally; width is constrained to prevent horizontal overflow */
+  opacity: 1;
+  z-index: 1;
+}
+
+.page-exit {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.page-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in;
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Reduced Motion Support */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-fadeIn,
+  .animate-slideUp,
+  .animate-slideDown,
+  .animate-scaleIn {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .animate-glowPulse {
+    animation: none;
+  }
+}
+

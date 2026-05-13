@@ -10,7 +10,7 @@ function Home() {
           <div className="jumbotron">
             <h1 className="display2">About Me</h1>
             <hr className="my-2" />
-            <img src={Parker} alt="Parker" />
+            <img src={Parker} alt="Parker" className="profile-img" />
             <div>
               <p className="intro">
                 My name is Parker Martin. I live in Utah with my wife Lindsey

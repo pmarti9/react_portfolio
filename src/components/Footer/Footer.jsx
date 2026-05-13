@@ -21,9 +21,9 @@ function Footer() {
          Send me an email: <a href="mailto:parkerjmartin883@gmail.com">parkerjmartin883@gmail.com</a>
         </p>
 
-        <div id="socialMedia">
-         <a href="https://www.github.com/pmarti9"><FontAwesomeIcon icon={faGithub} /></a>&nbsp;&nbsp;|&nbsp;&nbsp;
-         <a href="https://www.linkedin.com/in/parker-martin-a5361147/"><FontAwesomeIcon icon={faLinkedin }/></a>
+        <div className="socialMedia">
+         <a href="https://www.github.com/pmarti9" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGithub} /></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+         <a href="https://www.linkedin.com/in/parker-martin-a5361147/" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedin }/></a>
          </div>
 
       </footer>

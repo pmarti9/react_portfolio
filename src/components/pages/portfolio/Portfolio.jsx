@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../../../images/Parker Martin Resume 2023.pdf";
+import resume from "../../../images/parker_martin_resume_current.pdf";
 import "./portfolio.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,7 +10,7 @@ function Portfolio() {
     {
       id: "github",
       content: (
-        <a href="https://github.com/pmarti9">
+        <a href="https://github.com/pmarti9" target="_blank" rel="noopener noreferrer">
           GitHub <FontAwesomeIcon icon={faGithub} />{" "}
         </a>
       ),
@@ -18,7 +18,7 @@ function Portfolio() {
     {
       id: "linkedin",
       content: (
-        <a href="https://www.linkedin.com/in/parker-martin-a5361147/">
+        <a href="https://www.linkedin.com/in/parker-martin-a5361147/" target="_blank" rel="noopener noreferrer">
           LinkedIn <FontAwesomeIcon icon={faLinkedin} />
         </a>
       ),
