@@ -229,7 +229,7 @@ function TechBackground() {
         cancelAnimationFrame(animationIdRef.current);
       }
       // Guard removeChild to prevent NotFoundError in React Strict Mode
-      if (renderer.domElement.parentNode === currentMount) {
+      if (renderer.domElement && renderer.domElement.parentNode === currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
