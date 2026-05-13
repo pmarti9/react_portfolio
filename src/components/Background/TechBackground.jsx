@@ -13,6 +13,15 @@ function TechBackground() {
 
     const currentMount = mountRef.current;
 
+    // Check for reduced motion preference (with fallback for test environments)
+    const prefersReducedMotion = window.matchMedia
+      ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      : false;
+
+    // Adjust particle count based on viewport size for performance
+    const isMobile = window.innerWidth < 768;
+    const particleCount = isMobile ? 75 : 150;
+
     // Scene setup
     const scene = new THREE.Scene();
     sceneRef.current = scene;
@@ -25,17 +34,25 @@ function TechBackground() {
     );
     camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true
-    });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
-    currentMount.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
+    let renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      // Cap pixel ratio at 2x to avoid rendering at 3x DPR on phones
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(0x000000, 0);
+      currentMount.appendChild(renderer.domElement);
+      rendererRef.current = renderer;
+    } catch (error) {
+      // WebGL not available (test environment or unsupported browser)
+      console.warn('WebGL not available for TechBackground');
+      return;
+    }
 
     // Create particles
-    const particleCount = 150;
     const particles = [];
     const particleGeometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
@@ -86,9 +103,27 @@ function TechBackground() {
     const lineSegments = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lineSegments);
 
+    // Track visibility state for performance
+    let isVisible = !document.hidden;
+
     // Animation
     const animate = () => {
       animationIdRef.current = requestAnimationFrame(animate);
+
+      // Skip animation if document is hidden (performance optimization)
+      if (!isVisible) {
+        return;
+      }
+
+      // If reduced motion is preferred, render once and stop
+      if (prefersReducedMotion) {
+        renderer.render(scene, camera);
+        if (animationIdRef.current) {
+          cancelAnimationFrame(animationIdRef.current);
+          animationIdRef.current = null;
+        }
+        return;
+      }
 
       // Update particle positions
       const positions = particleGeometry.attributes.position.array;
@@ -151,15 +186,26 @@ function TechBackground() {
       renderer.setSize(window.innerWidth, window.innerHeight);
     };
 
+    // Handle visibility change to pause animation when tab is hidden
+    const handleVisibilityChange = () => {
+      isVisible = !document.hidden;
+      if (isVisible && !prefersReducedMotion && !animationIdRef.current) {
+        animate();
+      }
+    };
+
     window.addEventListener('resize', handleResize);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }
-      if (currentMount && renderer.domElement) {
+      // Guard removeChild to prevent NotFoundError in React Strict Mode
+      if (currentMount && renderer.domElement && renderer.domElement.parentNode === currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
       renderer.dispose();
