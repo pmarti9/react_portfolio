@@ -1,35 +1,87 @@
 
-img {
-
+/* Sticky Footer Layout */
+.app-wrapper {
     display: flex;
-    max-width: 350px;
-    max-height: 350px;
-    align-content: space-around;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    z-index: 1;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3),
+                0 0 60px rgba(0, 102, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.5),
+                0 0 80px rgba(0, 102, 255, 0.3);
 }
 
 .jumbotron {
-    border: 1rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
     margin: 1rem 1rem 1rem 1rem;
-    padding: 1rem;
-    outline: whitesmoke;
-
+    padding: 2rem;
+    background: rgba(10, 10, 26, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2),
+                inset 0 0 30px rgba(0, 102, 255, 0.1);
+    transform: translateZ(0); /* Hardware acceleration hint */
 }
 
 body {
-    height: 100vh;
-    background: linear-gradient(black, darkred 88%) fixed;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a0033 50%, #0a0a1a 100%) fixed;
+    color: #4df3ff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
+
+.navbar {
+    z-index: 10;
+}
+
 header {
-   position: fixed;
+   position: relative;
+   z-index: 10;
 }
+
 footer {
-   /* position: fixed; */
-   /*background-color: black;*/
    text-align: center;
-       left: 0;
-       bottom: 0;
-       width: 100%;
-       color: white;
+   width: 100%;
+   color: #00ffff;
+   background: rgba(10, 10, 26, 0.95);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   border-top: 1px solid rgba(0, 255, 255, 0.3);
+   padding: 1rem 0;
+   margin-top: auto;
+   box-shadow: 0 -5px 30px rgba(0, 255, 255, 0.1);
+   transform: translateZ(0);
 }
 
 .proj1img {
@@ -39,41 +91,66 @@ footer {
 .proj2img {
    width: 75%;
 }
+
 @media screen and (max-width: 768px){
-body {
-   /*background-color: black;*/
-   /*color: black;*/
-}
+    body {
+        background: linear-gradient(135deg, #0a0a1a 0%, #1a0033 100%) fixed;
+    }
+
     img {
         width: 25%;
         height: 25%;
-        ;
     }
- .jumbotron{
 
-     color: whitesmoke;
-     /*background-color: black;*/
- }
+    .jumbotron{
+        color: #4df3ff;
+        margin: 0.5rem;
+        padding: 1rem;
+    }
 }
+
 .card-group{
-    color: whitesmoke;
-    /*background-color: black;*/
+    color: #4df3ff;
 }
+
 .card-title{
-    color: whitesmoke;
-    /*background-color: black;*/
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: text-shadow 0.3s ease;
 }
+
+.card-title:hover {
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8),
+                 0 0 25px rgba(0, 102, 255, 0.5);
+}
+
 .cardbody {
-    color: whitesmoke;
-    /*background-color: black;*/
+    color: #4df3ff;
+    background: rgba(10, 10, 26, 0.7);
 }
+
 .card-text{
-    color: whitesmoke;
-   /*background-color: black;*/
+    color: #4df3ff;
 }
 
 .p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #4df3ff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 

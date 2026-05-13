@@ -3,13 +3,13 @@ i {
     display: inline;
     padding: 20px;
 }
-.socialMedia {
 
-    display:flex;
+.socialMedia {
+    display: flex;
     justify-content: center;
     flex-direction: row;
-
 }
+
 footer {
     display: flex;
     flex-direction: column;
@@ -17,5 +17,30 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    color: white;
+    color: #00ffff;
+    background: rgba(10, 10, 26, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 -5px 30px rgba(0, 255, 255, 0.1);
+    transform: translateZ(0);
 }
+
+footer a {
+    color: #00ffff;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+footer a:hover {
+    color: #4df3ff;
+    transform: scale(1.2) translateY(-3px);
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
+}
+
+footer span {
+    color: #4df3ff;
+    opacity: 0.8;
+}
+

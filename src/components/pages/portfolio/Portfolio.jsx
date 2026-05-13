@@ -1,5 +1,5 @@
 import React from "react";
-import resume from "../../../images/Parker Martin Resume 2023.pdf";
+import resume from "../../../images/parker_martin_resume_current.pdf";
 import "./portfolio.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
