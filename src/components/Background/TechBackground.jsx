@@ -7,6 +7,7 @@ function TechBackground() {
   const sceneRef = useRef(null);
   const rendererRef = useRef(null);
   const animationIdRef = useRef(null);
+  const prefersReducedMotionRef = useRef(false);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -15,7 +16,7 @@ function TechBackground() {
 
     // Check for reduced motion preference (with fallback for test environments)
     // Track dynamically so changes to OS setting are honored while app is open
-    let prefersReducedMotion = window.matchMedia
+    prefersReducedMotionRef.current = window.matchMedia
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
       : false;
     
@@ -136,7 +137,7 @@ function TechBackground() {
       }
 
       // If reduced motion is preferred, render once and stop
-      if (prefersReducedMotion) {
+      if (prefersReducedMotionRef.current) {
         renderer.render(scene, camera);
         if (animationIdRef.current) {
           cancelAnimationFrame(animationIdRef.current);
@@ -192,7 +193,7 @@ function TechBackground() {
       // Only upload the used portion of the buffer (optimization)
       const positionAttr = lineGeometry.attributes.position;
       positionAttr.updateRange.offset = 0;
-      positionAttr.updateRange.count = lineIdx * 2 * 3; // lineIdx lines * 2 vertices * 3 coords
+      positionAttr.updateRange.count = lineIdx * 2 * 3; // Upload only used vertices: lineIdx lines × 2 vertices/line × 3 components/vertex (x,y,z)
       positionAttr.needsUpdate = true;
       lineGeometry.setDrawRange(0, lineIdx * 2);
 
@@ -221,20 +222,20 @@ function TechBackground() {
     // Handle visibility change to pause animation when tab is hidden
     const handleVisibilityChange = () => {
       isVisible = !document.hidden;
-      if (isVisible && !prefersReducedMotion && !animationIdRef.current) {
+      if (isVisible && !prefersReducedMotionRef.current && !animationIdRef.current) {
         animate();
       }
     };
 
     // Handle reduced motion preference changes dynamically
     const handleReducedMotionChange = (e) => {
-      prefersReducedMotion = e.matches;
-      if (prefersReducedMotion && animationIdRef.current) {
+      prefersReducedMotionRef.current = e.matches;
+      if (prefersReducedMotionRef.current && animationIdRef.current) {
         // Stop animation if reduced motion is now preferred
         cancelAnimationFrame(animationIdRef.current);
         animationIdRef.current = null;
         renderer.render(scene, camera); // Render one final static frame
-      } else if (!prefersReducedMotion && isVisible && !animationIdRef.current) {
+      } else if (!prefersReducedMotionRef.current && isVisible && !animationIdRef.current) {
         // Restart animation if reduced motion is no longer preferred
         animate();
       }
