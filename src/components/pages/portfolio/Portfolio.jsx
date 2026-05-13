@@ -11,7 +11,7 @@ function Portfolio() {
       id: "github",
       content: (
         <a href="https://github.com/pmarti9">
-          Github <FontAwesomeIcon icon={faGithub} />{" "}
+          GitHub <FontAwesomeIcon icon={faGithub} />{" "}
         </a>
       ),
     },
