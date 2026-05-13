@@ -14,9 +14,12 @@ function TechBackground() {
     const currentMount = mountRef.current;
 
     // Check for reduced motion preference (with fallback for test environments)
-    const prefersReducedMotion = window.matchMedia
+    // Track dynamically so changes to OS setting are honored while app is open
+    let prefersReducedMotion = window.matchMedia
       ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
       : false;
+    
+    const reducedMotionQuery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
 
     // Create renderer first — bail out before allocating other Three.js resources
     // if WebGL is unavailable, to avoid leaking a Scene reference.
@@ -185,7 +188,12 @@ function TechBackground() {
         }
         if (lineIdx >= maxConnections) break;
       }
-      lineGeometry.attributes.position.needsUpdate = true;
+      
+      // Only upload the used portion of the buffer (optimization)
+      const positionAttr = lineGeometry.attributes.position;
+      positionAttr.updateRange.offset = 0;
+      positionAttr.updateRange.count = lineIdx * 2 * 3; // lineIdx lines * 2 vertices * 3 coords
+      positionAttr.needsUpdate = true;
       lineGeometry.setDrawRange(0, lineIdx * 2);
 
       // Rotate scene slightly for depth
@@ -218,13 +226,33 @@ function TechBackground() {
       }
     };
 
+    // Handle reduced motion preference changes dynamically
+    const handleReducedMotionChange = (e) => {
+      prefersReducedMotion = e.matches;
+      if (prefersReducedMotion && animationIdRef.current) {
+        // Stop animation if reduced motion is now preferred
+        cancelAnimationFrame(animationIdRef.current);
+        animationIdRef.current = null;
+        renderer.render(scene, camera); // Render one final static frame
+      } else if (!prefersReducedMotion && isVisible && !animationIdRef.current) {
+        // Restart animation if reduced motion is no longer preferred
+        animate();
+      }
+    };
+
     window.addEventListener('resize', handleResize);
     document.addEventListener('visibilitychange', handleVisibilityChange);
+    if (reducedMotionQuery) {
+      reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+    }
 
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (reducedMotionQuery) {
+        reducedMotionQuery.removeEventListener('change', handleReducedMotionChange);
+      }
       if (animationIdRef.current) {
         cancelAnimationFrame(animationIdRef.current);
       }

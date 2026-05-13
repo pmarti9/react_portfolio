@@ -107,11 +107,23 @@
 
 /*
   Color Contrast Ratios (WCAG 2.1):
-  ✓ Light Cyan (#4df3ff) on Dark Navy (#0a0a1a): 12.5:1 (AAA)
-  ✓ Primary Cyan (#00ffff) on Dark Navy (#0a0a1a): 14.8:1 (AAA)
-  ✓ Electric Blue (#0066ff) on Dark Navy (#0a0a1a): 7.2:1 (AA)
+  
+  NOTE: The ratios below are computed against pure backgrounds.
+  In practice, the app layers translucent cyan-tinted glass backgrounds
+  (rgba with cyan hue), cyan glow text-shadows, and gradient backgrounds
+  mixing #0a0a1a with #1a0033. The effective contrast on rendered pages
+  may be lower than these theoretical values.
+  
+  Theoretical ratios (pure #0a0a1a background):
+  - Light Cyan (#4df3ff) on Dark Navy (#0a0a1a): 12.5:1 (AAA)
+  - Primary Cyan (#00ffff) on Dark Navy (#0a0a1a): 14.8:1 (AAA)
+  - Electric Blue (#0066ff) on Dark Navy (#0a0a1a): 7.2:1 (AA)
 
-  All text meets WCAG AA standards for normal text.
-  Enhanced with text-shadow for improved readability on complex backgrounds.
+  RECOMMENDATION: Verify actual contrast ratios on rendered pages using
+  browser DevTools or accessibility testing tools, especially for text
+  over glass-morphism backgrounds with backdrop-filter effects.
+  
+  Text-shadow glows are used throughout to improve readability on
+  complex layered backgrounds.
 */
 
