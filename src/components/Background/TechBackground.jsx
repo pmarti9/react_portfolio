@@ -193,7 +193,7 @@ function TechBackground() {
       // Only upload the used portion of the buffer (optimization)
       const positionAttr = lineGeometry.attributes.position;
       positionAttr.updateRange.offset = 0;
-      positionAttr.updateRange.count = lineIdx * 2 * 3; // Upload only used vertices: lineIdx lines × 2 vertices/line × 3 components/vertex (x,y,z)
+      positionAttr.updateRange.count = lineIdx > 0 ? lineIdx * 2 * 3 : -1; // Upload only used vertices: lineIdx lines × 2 vertices/line × 3 components/vertex (x,y,z); -1 means update all
       positionAttr.needsUpdate = true;
       lineGeometry.setDrawRange(0, lineIdx * 2);
 
@@ -261,12 +261,13 @@ function TechBackground() {
       if (currentMount && renderer.domElement && renderer.domElement.parentNode === currentMount) {
         currentMount.removeChild(renderer.domElement);
       }
-      renderer.dispose();
+      // Clean up scene objects before disposing renderer (proper Three.js cleanup order)
       if (particleSystem) scene.remove(particleSystem);
       if (particleGeometry) particleGeometry.dispose();
       if (particleMaterial) particleMaterial.dispose();
       lineGeometry.dispose();
       lineMaterial.dispose();
+      renderer.dispose();
     };
   }, []);
 
