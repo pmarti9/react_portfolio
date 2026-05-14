@@ -149,11 +149,8 @@
 }
 
 .page-enter-done {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  /* Height is auto to allow content to flow naturally; width is constrained to prevent horizontal overflow */
   opacity: 1;
   z-index: 1;
 }
