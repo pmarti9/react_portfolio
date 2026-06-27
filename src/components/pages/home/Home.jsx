@@ -17,7 +17,6 @@ function Home() {
                 and son Cooper. I've completed the Coding Bootcamp from the
                 University of Utah and I specialize in backend development/engineering.
               </p>
-              <p></p>
               <p>To View my portfolio, click on the portfolio link
                 in the navigation. Feel free to follow me on GitHub and LinkedIn by clicking on the icons at the bottom of the page.
               </p>

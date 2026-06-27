@@ -46,8 +46,8 @@
 
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a0033 50%, #0a0a1a 100%) fixed;
-    color: #4df3ff;
+    background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-purple) 50%, var(--color-bg-dark) 100%) fixed;
+    color: var(--color-primary-light);
     overflow-x: hidden;
     margin: 0;
     padding: 0;
@@ -65,7 +65,7 @@ header {
 footer {
    text-align: center;
    width: 100%;
-   color: #00ffff;
+   color: var(--color-primary);
    background: rgba(10, 10, 26, 0.95);
    backdrop-filter: blur(10px);
    -webkit-backdrop-filter: blur(10px);
@@ -86,7 +86,7 @@ footer {
 
 @media screen and (max-width: 768px){
     body {
-        background: linear-gradient(135deg, #0a0a1a 0%, #1a0033 100%) fixed;
+        background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-purple) 100%) fixed;
     }
 
     .jumbotron img {
@@ -95,18 +95,18 @@ footer {
     }
 
     .jumbotron{
-        color: #4df3ff;
+        color: var(--color-primary-light);
         margin: 0.5rem;
         padding: 1rem;
     }
 }
 
 .card-group{
-    color: #4df3ff;
+    color: var(--color-primary-light);
 }
 
 .card-title{
-    color: #00ffff;
+    color: var(--color-primary);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
     transition: text-shadow 0.3s ease;
 }
@@ -117,12 +117,12 @@ footer {
 }
 
 .cardbody {
-    color: #4df3ff;
+    color: var(--color-primary-light);
     background: rgba(10, 10, 26, 0.7);
 }
 
 .card-text{
-    color: #4df3ff;
+    color: var(--color-primary-light);
 }
 
 .p {
@@ -131,18 +131,18 @@ footer {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #00ffff;
+    color: var(--color-primary);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
 a {
-    color: #00ffff;
+    color: var(--color-primary);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #4df3ff;
+    color: var(--color-primary-light);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 

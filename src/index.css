@@ -1,5 +1,17 @@
 @import './animations.css';
 
+:root {
+  --color-primary: #00ffff;
+  --color-primary-light: #4df3ff;
+  --color-accent: #0066ff;
+  --color-bg-dark: #0a0a1a;
+  --color-bg-purple: #1a0033;
+  --color-border: rgba(0, 255, 255, 0.3);
+  --color-glass: rgba(10, 10, 26, 0.85);
+  --color-error: #ff4444;
+  --color-error-light: #ff6b6b;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,8 +29,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0a0a1a;
-  color: #4df3ff;
+  background: var(--color-bg-dark);
+  color: var(--color-primary-light);
   overflow-x: hidden;
 }
 
@@ -31,9 +43,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-  color: #00ffff;
+  color: var(--color-primary);
   background: rgba(0, 255, 255, 0.1);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
 }
-

@@ -25,7 +25,7 @@
     text-align: center;
     align-content: center;
     background: transparent;
-    color: #4df3ff;
+    color: var(--color-primary-light);
     padding: 2rem;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .card-title {
-    color: #00ffff;
+    color: var(--color-primary);
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
