@@ -82,8 +82,10 @@ function Contact() {
                                     className={`form-input${errors.name ? ' input-error' : ''}`}
                                     placeholder="Your name"
                                     autoComplete="name"
+                                    aria-invalid={errors.name ? 'true' : 'false'}
+                                    aria-describedby={errors.name ? 'name-error' : undefined}
                                 />
-                                {errors.name && <span className="error-msg" role="alert">{errors.name}</span>}
+                                {errors.name && <span className="error-msg" role="alert" id="name-error">{errors.name}</span>}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email</label>
@@ -96,8 +98,10 @@ function Contact() {
                                     className={`form-input${errors.email ? ' input-error' : ''}`}
                                     placeholder="your@email.com"
                                     autoComplete="email"
+                                    aria-invalid={errors.email ? 'true' : 'false'}
+                                    aria-describedby={errors.email ? 'email-error' : undefined}
                                 />
-                                {errors.email && <span className="error-msg" role="alert">{errors.email}</span>}
+                                {errors.email && <span className="error-msg" role="alert" id="email-error">{errors.email}</span>}
                             </div>
                             <div className="form-group">
                                 <label htmlFor="message">Message</label>
@@ -109,8 +113,10 @@ function Contact() {
                                     className={`form-input form-textarea${errors.message ? ' input-error' : ''}`}
                                     placeholder="What would you like to say?"
                                     rows={6}
+                                    aria-invalid={errors.message ? 'true' : 'false'}
+                                    aria-describedby={errors.message ? 'message-error' : undefined}
                                 />
-                                {errors.message && <span className="error-msg" role="alert">{errors.message}</span>}
+                                {errors.message && <span className="error-msg" role="alert" id="message-error">{errors.message}</span>}
                             </div>
                             <button type="submit" className="contact-submit">Send Message</button>
                         </form>

@@ -48,7 +48,7 @@
 }
 
 .form-input.input-error {
-    border-color: #ff4444;
+    border-color: var(--color-error);
     box-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .error-msg {
-    color: #ff6b6b;
+    color: var(--color-error-light);
     font-size: 0.8rem;
 }
 

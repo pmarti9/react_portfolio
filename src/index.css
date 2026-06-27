@@ -8,6 +8,8 @@
   --color-bg-purple: #1a0033;
   --color-border: rgba(0, 255, 255, 0.3);
   --color-glass: rgba(10, 10, 26, 0.85);
+  --color-error: #ff4444;
+  --color-error-light: #ff6b6b;
 }
 
 * {
