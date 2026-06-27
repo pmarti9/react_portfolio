@@ -17,7 +17,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    color: #00ffff;
+    color: var(--color-primary);
     background: rgba(10, 10, 26, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -27,20 +27,20 @@ footer {
 }
 
 footer a {
-    color: #00ffff;
+    color: var(--color-primary);
     transition: all 0.3s ease;
     display: inline-block;
 }
 
 footer a:hover {
-    color: #4df3ff;
+    color: var(--color-primary-light);
     transform: scale(1.2) translateY(-3px);
     text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
     filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.6));
 }
 
 footer span {
-    color: #4df3ff;
+    color: var(--color-primary-light);
     opacity: 0.8;
 }
 
