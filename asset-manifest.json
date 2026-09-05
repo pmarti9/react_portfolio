@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/react_portfolio/static/css/main.02ea1c2c.css",
-    "main.js": "/react_portfolio/static/js/main.39626f64.js",
+    "main.css": "/react_portfolio/static/css/main.e2a8eceb.css",
+    "main.js": "/react_portfolio/static/js/main.03ef6e0c.js",
     "static/media/parker_martin_resume_current.pdf": "/react_portfolio/static/media/parker_martin_resume_current.dfadff56b51b7c0cdf7d.pdf",
+    "static/media/alta-stucco.jpg": "/react_portfolio/static/media/alta-stucco.c3eb33cb19b6905aa4f3.jpg",
     "static/media/ParkerMartin.jpg": "/react_portfolio/static/media/ParkerMartin.0710fde18e734957bc29.jpg",
+    "static/media/drift2sail.jpg": "/react_portfolio/static/media/drift2sail.dd955b8cf6e7dc03bcea.jpg",
     "index.html": "/react_portfolio/index.html",
-    "main.02ea1c2c.css.map": "/react_portfolio/static/css/main.02ea1c2c.css.map",
-    "main.39626f64.js.map": "/react_portfolio/static/js/main.39626f64.js.map"
+    "main.e2a8eceb.css.map": "/react_portfolio/static/css/main.e2a8eceb.css.map",
+    "main.03ef6e0c.js.map": "/react_portfolio/static/js/main.03ef6e0c.js.map"
   },
   "entrypoints": [
-    "static/css/main.02ea1c2c.css",
-    "static/js/main.39626f64.js"
+    "static/css/main.e2a8eceb.css",
+    "static/js/main.03ef6e0c.js"
   ]
 }
