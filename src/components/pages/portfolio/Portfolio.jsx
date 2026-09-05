@@ -1,9 +1,11 @@
 import React from "react";
 import resume from "../../../images/parker_martin_resume_current.pdf";
+import altaStuccoScreenshot from "../../../images/alta-stucco.jpg";
+import drift2sailScreenshot from "../../../images/drift2sail.jpg";
 import "./portfolio.css";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import { faLaptopCode, faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 function Portfolio() {
   const portfolioContents = [
@@ -34,6 +36,25 @@ function Portfolio() {
     },
   ];
 
+  const clientProjects = [
+    {
+      id: "alta-stucco",
+      title: "Alta Stucco",
+      description:
+        "React frontend built and deployed for Alta Stucco — live at altastucco.com.",
+      liveUrl: "https://altastucco.com/",
+      screenshot: altaStuccoScreenshot,
+    },
+    {
+      id: "drift2sail",
+      title: "Drift2Sail",
+      description:
+        "WordPress site configured and customized for Drift2Sail — live at drift2sail.com.",
+      liveUrl: "https://drift2sail.com/",
+      screenshot: drift2sailScreenshot,
+    },
+  ];
+
   return (
     <div>
       {portfolioContents.map(function (data) {
@@ -55,6 +76,37 @@ function Portfolio() {
           </div>
         );
       })}
+
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="jumbotron">
+              <div className="row justify-content-center g-4">
+                {clientProjects.map(function (project) {
+                  return (
+                    <div className="col-md-6" key={project.id}>
+                      <div className="card project-card h-100">
+                        <img
+                          src={project.screenshot}
+                          alt={`Screenshot of the ${project.title} website`}
+                          className="project-card-img"
+                        />
+                        <div className="card-body">
+                          <h4 className="card-title">{project.title}</h4>
+                          <p className="card-text">{project.description}</p>
+                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                            Visit site <FontAwesomeIcon icon={faExternalLinkAlt} />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
