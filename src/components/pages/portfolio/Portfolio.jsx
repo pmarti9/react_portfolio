@@ -41,7 +41,7 @@ function Portfolio() {
       id: "alta-stucco",
       title: "Alta Stucco",
       description:
-        "React frontend built and deployed for Alta Stucco, a stucco and masonry contractor — live at altastucco.com.",
+        "React frontend built and deployed for Alta Stucco — live at altastucco.com.",
       liveUrl: "https://altastucco.com/",
       screenshot: altaStuccoScreenshot,
     },
@@ -49,7 +49,7 @@ function Portfolio() {
       id: "drift2sail",
       title: "Drift2Sail",
       description:
-        "WordPress site configured and customized for Drift2Sail, a private and adaptive swim lesson business — live at drift2sail.com.",
+        "WordPress site configured and customized for Drift2Sail — live at drift2sail.com.",
       liveUrl: "https://drift2sail.com/",
       screenshot: drift2sailScreenshot,
     },
